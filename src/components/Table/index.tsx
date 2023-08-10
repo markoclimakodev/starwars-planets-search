@@ -19,8 +19,7 @@ export default function Table() {
     'Edited',
     'URL',
   ];
-
-  const planetsInfos = filteredPlanets.length > 0 ? filteredPlanets : planets;
+  const planetsToDisplay = filteredPlanets.length > 0 ? filteredPlanets : planets;
 
   return (
     <table>
@@ -34,7 +33,7 @@ export default function Table() {
         </tr>
       </thead>
       <tbody>
-        {planetsInfos && planetsInfos.map((planet:Planet) => (
+        {planetsToDisplay && planetsToDisplay.map((planet:Planet) => (
           <tr key={ planet.name }>
             <td>{planet.name}</td>
             <td>{planet.rotation_period}</td>

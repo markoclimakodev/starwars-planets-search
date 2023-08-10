@@ -10,10 +10,11 @@ function App() {
   const [planets, setPlanets] = useState<Planet[]>([]);
   const [filteredPlanets, setFilteredPlanets] = useState<Planet[]>([]);
 
-  const handleFilterPlanet = (search:string) => {
-    const filterPlanet = planets
-      .filter((planet) => planet.name.includes(search));
-    setFilteredPlanets(filterPlanet);
+  const handleFilterPlanet = (searchTerm:string) => {
+    const filtered = planets
+      .filter((planet) => planet.name.includes(searchTerm));
+
+    setFilteredPlanets(filtered);
   };
 
   useEffect(() => {

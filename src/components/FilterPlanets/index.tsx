@@ -1,13 +1,13 @@
-import { useContext, useEffect, useState } from 'react';
+import { useCallback, useContext } from 'react';
 import { PlanetContext } from '../../context/planetsContext';
 
 export default function FilterPlanets() {
   const { handleFilterPlanet } = useContext(PlanetContext);
-  const [search, setSearch] = useState('');
 
-  useEffect(() => {
-    handleFilterPlanet(search);
-  }, [search, handleFilterPlanet]);
+  const handleSearchChange = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
+    const searchTerm = event.target.value;
+    handleFilterPlanet(searchTerm);
+  }, [handleFilterPlanet]);
 
   return (
     <form>
@@ -16,7 +16,7 @@ export default function FilterPlanets() {
           type="text"
           id="filterPlanet"
           data-testid="name-filter"
-          onChange={ (event) => setSearch(event.target.value) }
+          onChange={ handleSearchChange }
         />
       </label>
     </form>
