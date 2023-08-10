@@ -3,7 +3,7 @@ import { PlanetContext } from '../../context/planetsContext';
 import { Planet } from '../../types';
 
 export default function Table() {
-  const { planets } = useContext(PlanetContext);
+  const { planets, filteredPlanets } = useContext(PlanetContext);
   const tableHeaders = [
     'Name',
     'Rotation Period',
@@ -20,6 +20,8 @@ export default function Table() {
     'URL',
   ];
 
+  const planetsInfos = filteredPlanets.length > 0 ? filteredPlanets : planets;
+
   return (
     <table>
       <thead>
@@ -32,7 +34,7 @@ export default function Table() {
         </tr>
       </thead>
       <tbody>
-        {planets && planets.map((planet:Planet) => (
+        {planetsInfos && planetsInfos.map((planet:Planet) => (
           <tr key={ planet.name }>
             <td>{planet.name}</td>
             <td>{planet.rotation_period}</td>
