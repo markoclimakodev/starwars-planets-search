@@ -21,3 +21,11 @@ export type PlanetResponse = {
   previous: string;
   results: Planet[];
 };
+
+export type Comparison = 'maior que' | 'menor que' | 'igual a';
+
+export type Filter = {
+  column: keyof Planet;
+  comparison: Comparison
+  value: string;
+};
