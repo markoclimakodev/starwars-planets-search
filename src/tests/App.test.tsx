@@ -51,7 +51,7 @@ describe('Test for Table component', () => {
 
     const filteredPlanets = [
       'Alderaan',
-      'Yavin',
+      'Yavin IV',
       'Coruscant'
     ]
 
@@ -80,7 +80,7 @@ describe('Test for Table component', () => {
 
     const firstFilterResult = [
       'Alderaan',
-      'Yavin',
+      'Yavin IV',
       'Coruscant'
     ]
 
