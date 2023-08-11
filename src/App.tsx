@@ -17,6 +17,10 @@ function App() {
     setFilteredPlanets(filtered);
   };
 
+  const handleFilteredPlanetNumeric = (array:Planet[]) => {
+    setFilteredPlanets(array);
+  };
+
   useEffect(() => {
     const fetchApi = async () => {
       const planetsResponse = await fetchPlanets();
@@ -27,8 +31,9 @@ function App() {
 
   const providerValues = {
     planets,
-    handleFilterPlanet,
     filteredPlanets,
+    handleFilterPlanet,
+    handleFilteredPlanetNumeric,
   };
 
   return (
