@@ -16,6 +16,8 @@ beforeEach(async () => {
     json: async () => (mockData),
   });
   render(<App />);
+  expect(global.fetch).toBeCalledTimes(1);
+
 });
 
 describe('Test for Table component', () => {
