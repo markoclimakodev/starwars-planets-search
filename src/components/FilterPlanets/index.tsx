@@ -2,6 +2,14 @@ import { useCallback, useContext, useState } from 'react';
 import { PlanetContext } from '../../context/planetsContext';
 import { Planet } from '../../types';
 
+type Comparison = 'maior que' | 'menor que' | 'igual a';
+
+type Filter = {
+  column: keyof Planet;
+  comparison: Comparison
+  value: string;
+};
+
 export default function FilterPlanets() {
   const {
     handleFilterPlanet,
@@ -9,34 +17,50 @@ export default function FilterPlanets() {
     handleFilteredPlanetNumeric,
   } = useContext(PlanetContext);
 
-  const [column, setColumn] = useState('population');
-  const [comparison, setComparison] = useState('maior que');
+  const [column, setColumn] = useState<keyof Planet>('population');
+  const [comparison, setComparison] = useState<Comparison>('maior que');
   const [value, setValue] = useState('0');
+  const [appliedFilters, setAppliedFilters] = useState<Filter[]>([]);
 
   const handleSearchChange = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
     const searchTerm = event.target.value;
     handleFilterPlanet(searchTerm);
   }, [handleFilterPlanet]);
 
-  const handleFilter = useCallback(() => {
-    const filteredPlanets = planets.filter((planet) => {
-      const planetValue = Number(planet[column as keyof Planet]);
-      const inputValue = Number(value);
+  const applyFilters = useCallback((newFilters:Filter[]) => {
+    setAppliedFilters(newFilters);
 
-      switch (comparison) {
-        case 'maior que':
-          return planetValue > inputValue;
-        case 'menor que':
-          return planetValue < inputValue;
-        case 'igual a':
-          return planetValue === inputValue;
-        default:
-          return false;
-      }
+    let filteredPlanets = planets;
+    newFilters.forEach((filter) => {
+      filteredPlanets = filteredPlanets.filter((planet) => {
+        const planetValue = Number(planet[filter.column as keyof Planet]);
+        const inputValue = Number(filter.value);
+
+        switch (filter.comparison) {
+          case 'maior que':
+            return planetValue > inputValue;
+          case 'menor que':
+            return planetValue < inputValue;
+          case 'igual a':
+            return planetValue === inputValue;
+          default:
+            return false;
+        }
+      });
     });
-
     handleFilteredPlanetNumeric(filteredPlanets);
-  }, [column, comparison, value, handleFilteredPlanetNumeric, planets]);
+  }, [handleFilteredPlanetNumeric, planets]);
+
+  const handleFilters = useCallback(() => {
+    const newFilter:Filter = {
+      column,
+      comparison,
+      value,
+    };
+
+    applyFilters([...appliedFilters, newFilter]);
+  }, [column, comparison, value, appliedFilters, applyFilters]);
+
   return (
     <form>
       <label htmlFor="filterPlanet">
@@ -53,7 +77,7 @@ export default function FilterPlanets() {
           id="column-filter"
           value={ column }
           data-testid="column-filter"
-          onChange={ (event) => setColumn(event.target.value) }
+          onChange={ (event) => setColumn(event.target.value as keyof Planet) }
         >
           <option value="population">population</option>
           <option value="orbital_period">orbital_period</option>
@@ -69,7 +93,7 @@ export default function FilterPlanets() {
           id="comparison-filter"
           value={ comparison }
           data-testid="comparison-filter"
-          onChange={ (event) => setComparison(event.target.value) }
+          onChange={ (event) => setComparison(event.target.value as Comparison) }
         >
           <option value="maior que">maior que</option>
           <option value="menor que">menor que</option>
@@ -91,7 +115,7 @@ export default function FilterPlanets() {
         type="button"
         id="button-filter"
         data-testid="button-filter"
-        onClick={ handleFilter }
+        onClick={ handleFilters }
       >
         FILTRAR
 
