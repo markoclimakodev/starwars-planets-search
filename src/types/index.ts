@@ -15,7 +15,7 @@ export type Planet = {
   url: string;
 };
 
-export type TableColumns = {
+export type TableHeaders = {
   name: string;
   rotation_period: string;
   orbital_period: string;
