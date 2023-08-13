@@ -1,0 +1,138 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+  width: 75.75rem;
+}
+
+.filter_by_name_container {
+  align-items: center;
+  display: flex;
+  position: relative;
+}
+
+.filter_by_name {
+  background-color: transparent;
+  border-radius: 0.3rem;
+  border: 1px solid var(--soft-text-color);
+  color: var(--strong-text-color);
+  font-size: 1rem;
+  height: 2.62rem;
+  text-align: center;
+  width: 42rem;
+}
+
+.filter_by_name:focus-within {
+  border: 1px solid var(--radiant);
+  outline: 1px var(--radiant) solid;
+}
+
+.searchIcon {
+  position: absolute;
+  right: 0.8rem;
+}
+
+.numeric_filter_container {
+  align-items: center;
+  border: none;
+  color: var(--soft-text-color);
+  display: flex;
+  gap: 4rem;
+  padding: 0.1rem 2.5rem;
+  width: 100%;
+}
+
+.options_container {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.8rem;
+  font-weight: 700;
+  gap: 0.2rem;
+}
+
+.selects {
+  background-color: transparent;
+  border: none;
+  color: #FFF;
+  font-size: 1rem;
+  outline: none;
+  width: 100%;
+}
+
+.selects:hover {
+  color: var(--radiant);
+}
+
+.selects option {
+  background-color: var(--tableHead-bg);
+  border: var(--tableHead-bg);
+  color: var(--radiant);
+  font-size: 1rem;
+  outline: none;
+}
+
+.filter_value {
+  background: transparent;
+  border-radius: 0.5rem;
+  border: 1px solid var(--soft-text-color);
+  color: #FFF;
+  font-size: 0.87rem;
+  height: 2.62rem;
+  padding-left: 0.8rem;
+  width: 5.68rem;
+}
+
+.filter_value:focus-within {
+  border: 1px solid var(--radiant);
+  outline: 1px var(--radiant) solid;
+}
+
+.filter_button {
+  width: 5.6875rem;
+  height: 5.3125rem;
+  color: #FAE60A;
+  text-align: center;
+  background-color: transparent;
+  border: 1px solid var(--radiant);
+  border-radius: 0.8rem;
+  transition: all 350ms ease-in-out;
+}
+
+.filter_button:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.active_filters_container {
+  display: flex;
+  gap: 0.5rem;
+  align-self: flex-start;
+  padding: 1rem;
+}
+
+.filter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--strong-text-color);
+  font-size: 1rem;
+  gap: 0.5rem;
+  padding: 0.4rem;
+  border-radius: 0.2rem;
+  background-color: var(--tableHead-bg);
+}
+
+.clear_filter_button {
+  background-color: transparent;
+  border: none;
+}
+
+.clear_filter_icon {
+  color: var(--strong-text-color);
+  transition: all 250ms ease-in-out;
+}
+
+.clear_filter_icon:hover {
+  color: rgb(224, 43, 43);
+}
