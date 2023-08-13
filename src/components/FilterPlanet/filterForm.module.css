@@ -154,15 +154,3 @@
 .clear_filter_icon:hover {
   color: rgb(224, 43, 43);
 }
-
-.remove_clear_all_button {
-  align-self: flex-start;
-  background-color: transparent;
-  border: 1px solid var(--radiant);
-  border-radius: 0.2rem;
-  color: var(--radiant);
-  margin-left: 1rem;
-  padding: 0.5rem;
-  text-align: center;
-  transition: all 350ms ease-in-out;
-}

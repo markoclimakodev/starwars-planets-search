@@ -33,7 +33,7 @@ export function PlanetsProvider({ children }:PlanetsProviderProps) {
 
       filters.forEach((filter) => {
         planetsToFilter = planetsToFilter.filter((planet) => {
-          const columnValue = Number(planet[filter.column as keyof Planet]);
+          const columnValue = Number(planet[filter.column]);
           const comparisonValue = Number(filter.value);
           const comparisons = {
             'maior que': () => columnValue > comparisonValue,

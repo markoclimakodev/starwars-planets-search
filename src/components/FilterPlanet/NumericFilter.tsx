@@ -5,7 +5,13 @@ import { PlanetsContext } from '../../context/PlanetsContext';
 
 import { columnFilterOptions, filtersInitalValues, sortinitalValue } from './filtersData';
 
-import { Filter, NumericFilterEvent, Planet, SortType } from '../../types';
+import {
+  EraseFilterEvent,
+  Filter,
+  NumericFilterEvent,
+  Planet,
+  SortType,
+} from '../../types';
 
 import styles from './filterForm.module.css';
 import { moveUnknownToEnd } from './helpers/moveUnknowToEnd';
@@ -40,14 +46,14 @@ export default function NumericFilter() {
     let sortedPlanets = planets;
     if (sort.order === 'ASC') {
       sortedPlanets = sortedPlanets
-        .sort((planetA, planetB) => Number(planetA[sort.column_sort as keyof Planet])
+        .sort((planetA, planetB) => Number(planetA[sort.column_sort])
       - Number(planetB[sort.column_sort as keyof Planet]));
     }
 
     if (sort.order === 'DESC') {
       sortedPlanets
-        .sort((planetA, planetB) => Number(planetB[sort.column_sort as keyof Planet])
-    - Number(planetA[sort.column_sort as keyof Planet]));
+        .sort((planetA, planetB) => Number(planetB[sort.column_sort])
+    - Number(planetA[sort.column_sort]));
     }
     sortedPlanets = moveUnknownToEnd(sortedPlanets, sort);
     handleFilterPlanets(sortedPlanets);
@@ -65,6 +71,13 @@ export default function NumericFilter() {
     applyFilters([...activeFilters, newFilter]);
     setFilterValues(filtersInitalValues);
   }, [filterValues, activeFilters, applyFilters]);
+
+  const handleRemoveAllFilters = useCallback((event: EraseFilterEvent) => {
+    const { id } = event.currentTarget;
+    if (id === 'remove_all_filters') {
+      handleActiveFilters([]);
+    }
+  }, [handleActiveFilters]);
 
   return (
     <fieldset className={ styles.main_filter_container }>
@@ -167,6 +180,15 @@ export default function NumericFilter() {
           onClick={ () => handleSort(sortValue) }
         >
           Ordenar
+        </button>
+        <button
+          type="button"
+          id="remove_all_filters"
+          data-testid="button-remove-filters"
+          onClick={ handleRemoveAllFilters }
+          className={ styles.filter_button }
+        >
+          Remover todos os filtros
         </button>
       </fieldset>
     </fieldset>

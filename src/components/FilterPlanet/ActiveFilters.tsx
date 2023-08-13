@@ -16,50 +16,28 @@ export default function ActiveFilters() {
     handleActiveFilters(filtersApplied);
   }, [activeFilters, handleActiveFilters]);
 
-  const handleRemoveAllFilters = useCallback((event: EraseFilterEvent) => {
-    const { id } = event.currentTarget;
-    if (id === 'remove_all_filters') {
-      handleActiveFilters([]);
-    }
-  }, [handleActiveFilters]);
-
   return (
-    <>
-      <ul className={ styles.active_filters_container }>
-        {activeFilters && activeFilters.map((filter) => (
-          <li
-            key={ filter.id }
-            data-testid="filter"
-            className={ styles.filter }
-          >
-            {`${filter.column} | ${filter.comparison} | ${filter.value}`}
-            <button
-              type="button"
-              id={ filter.id }
-              onClick={ handleRemoveFilter }
-              className={ styles.clear_filter_button }
-            >
-              <RxTrash
-                className={ styles.clear_filter_icon }
-                size={ 20 }
-              />
-            </button>
-          </li>
-        ))}
-      </ul>
-      {
-        activeFilters.length > 1 && (
+    <ul className={ styles.active_filters_container }>
+      {activeFilters && activeFilters.map((filter) => (
+        <li
+          key={ filter.id }
+          data-testid="filter"
+          className={ styles.filter }
+        >
+          {`${filter.column} | ${filter.comparison} | ${filter.value}`}
           <button
             type="button"
-            id="remove_all_filters"
-            data-testid="button-remove-filters"
-            onClick={ handleRemoveAllFilters }
-            className={ styles.remove_clear_all_button }
+            id={ filter.id }
+            onClick={ handleRemoveFilter }
+            className={ styles.clear_filter_button }
           >
-            Remover todos os filtros
+            <RxTrash
+              className={ styles.clear_filter_icon }
+              size={ 20 }
+            />
           </button>
-        )
-      }
-    </>
+        </li>
+      ))}
+    </ul>
   );
 }
