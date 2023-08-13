@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
+import { PlanetsContext } from './PlanetsContext';
 import { fetchPlanets } from '../api/api';
 import { Planet } from '../types';
-import { PlanetContext } from './PlanetsContext';
 
 type PlanetsProviderProps = {
   children: React.ReactNode,
@@ -25,8 +25,8 @@ export function PlanetsProvider({ children }:PlanetsProviderProps) {
   };
 
   return (
-    <PlanetContext.Provider value={ providerValues }>
+    <PlanetsContext.Provider value={ providerValues }>
       {children}
-    </PlanetContext.Provider>
+    </PlanetsContext.Provider>
   );
 }

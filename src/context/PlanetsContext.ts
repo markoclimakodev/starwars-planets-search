@@ -1,8 +1,8 @@
 import { createContext } from 'react';
 import { Planet } from '../types';
 
-export type PlanetContextType = {
+export type PlanetsContextType = {
   planets: Planet[],
 };
 
-export const PlanetContext = createContext({} as PlanetContextType);
+export const PlanetsContext = createContext({} as PlanetsContextType);
