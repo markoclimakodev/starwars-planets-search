@@ -1,9 +1,9 @@
 .form {
+  align-items: center;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   gap: 4rem;
+  justify-content: center;
   width: 75.75rem;
 }
 
@@ -15,8 +15,8 @@
 
 .filter_by_name {
   background-color: transparent;
-  border-radius: 0.3rem;
   border: 1px solid var(--soft-text-color);
+  border-radius: 0.3rem;
   color: var(--strong-text-color);
   font-size: 1rem;
   height: 2.62rem;
@@ -55,7 +55,7 @@
 .selects {
   background-color: transparent;
   border: none;
-  color: #FFF;
+  color: var(--strong-text-color);
   font-size: 1rem;
   outline: none;
   width: 100%;
@@ -75,9 +75,9 @@
 
 .filter_value {
   background: transparent;
-  border-radius: 0.5rem;
   border: 1px solid var(--soft-text-color);
-  color: #FFF;
+  border-radius: 0.5rem;
+  color: var(--strong-text-color);
   font-size: 0.87rem;
   height: 2.62rem;
   padding-left: 0.8rem;
@@ -90,14 +90,14 @@
 }
 
 .filter_button {
-  width: 5.6875rem;
-  height: 5.3125rem;
-  color: #FAE60A;
-  text-align: center;
   background-color: transparent;
   border: 1px solid var(--radiant);
   border-radius: 0.8rem;
+  color: var(--radiant);
+  height: 5.31rem;
+  text-align: center;
   transition: all 350ms ease-in-out;
+  width: 5.68rem;
 }
 
 .filter_button:hover {
@@ -105,22 +105,22 @@
 }
 
 .active_filters_container {
+  align-self: flex-start;
   display: flex;
   gap: 0.5rem;
-  align-self: flex-start;
   padding: 1rem;
 }
 
 .filter {
-  display: flex;
   align-items: center;
-  justify-content: center;
+  background-color: var(--tableHead-bg);
+  border-radius: 0.2rem;
   color: var(--strong-text-color);
+  display: flex;
   font-size: 1rem;
   gap: 0.5rem;
+  justify-content: center;
   padding: 0.4rem;
-  border-radius: 0.2rem;
-  background-color: var(--tableHead-bg);
 }
 
 .clear_filter_button {
@@ -136,3 +136,4 @@
 .clear_filter_icon:hover {
   color: rgb(224, 43, 43);
 }
+
