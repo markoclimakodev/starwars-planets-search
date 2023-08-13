@@ -113,9 +113,9 @@
 .active_filters_container {
   align-self: flex-start;
   display: flex;
+  flex-wrap: wrap;
   gap: 0.5rem;
   padding: 1rem;
-  flex-wrap: wrap;
 }
 
 .filter {
@@ -127,17 +127,17 @@
   font-size: 1rem;
   gap: 0.5rem;
   justify-content: center;
-  white-space: nowrap;
   padding: 0.4rem;
+  white-space: nowrap;
 }
 
 .sort_values {
+  accent-color: var(--radiant);
+  border: none;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   gap: 1rem;
-  border: none;
-  accent-color:var(--radiant);
+  justify-content: center;
 }
 
 
@@ -156,13 +156,13 @@
 }
 
 .remove_clear_all_button {
-  background-color: transparent;
   align-self: flex-start;
+  background-color: transparent;
   border: 1px solid var(--radiant);
   border-radius: 0.2rem;
   color: var(--radiant);
+  margin-left: 1rem;
   padding: 0.5rem;
   text-align: center;
   transition: all 350ms ease-in-out;
-  margin-left: 1rem;
 }
