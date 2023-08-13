@@ -1,0 +1,12 @@
+.main {
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 0.5rem;
+  border: 1px solid var(--soft-text-color);
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  justify-content: center;
+  padding-top: 4rem;
+  width: fit-content;
+}
