@@ -1,0 +1,81 @@
+.table {
+  border-collapse: collapse;
+  box-shadow: rgba(0, 0, 0, 0.35) 0.1px 5px 15px;
+  display: flex;
+  flex-direction: column;
+  height: 26.87rem;
+  overflow-x: auto;
+  overflow-y: auto;
+  width: 75.75rem;
+}
+
+.thead {
+  display: flex;
+  width: 100%;
+}
+
+.tr {
+  align-items: center;
+  display: flex;
+  gap: 0.125rem;
+  width: fit-content;
+}
+
+.tr th {
+  align-items: center;
+  background-color: var(--tableHead-bg);
+  color: var(--strong-text-color);
+  display: flex;
+  height: 4.37rem;
+  justify-content: center;
+  width: 7.76rem;
+}
+
+.th.arrayCell {
+  width: 22.25rem;
+}
+
+.tbody {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.tbody .tr {
+  border-bottom: 0.062rem var(--soft-text-color) solid;
+}
+
+.tr td {
+  align-items: center;
+  color: var(--soft-text-color);
+  display: flex;
+  height: 6.36rem;
+  justify-content: center;
+  overflow: hidden;
+  padding: 0.5rem;
+  width: 7.76rem;
+}
+
+.tr .arrayCell {
+  display: flex;
+  flex-direction: column;
+  font-size: 12px;
+  width: 22.25rem;
+}
+
+.td.break_cell {
+  align-items: center;
+  display: flex;
+  font-size: 10px;
+  justify-content: center;
+  transition: transform all ease-in-out;
+  white-space: nowrap;
+}
+
+.td.break_cell:hover {
+  background: var(--tableHead-bg);
+  border-radius: 0.125rem;
+  box-shadow: rgba(100, 100, 111, 0.2) 0.1px 7px 29px 0.1px;
+  height: 40px;
+  transform: scale(2);
+}
