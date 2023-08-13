@@ -1,7 +1,14 @@
-import './App.css';
+import PlanetTable from './components/PlanetTable';
+import { PlanetsProvider } from './context/PlanetsProvider';
+
+import './App.module.css';
 
 function App() {
-  return <h1>Hi</h1>;
+  return (
+    <PlanetsProvider>
+      <PlanetTable />
+    </PlanetsProvider>
+  );
 }
 
 export default App;
