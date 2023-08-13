@@ -1,0 +1,15 @@
+export const headerData = {
+  name: 'Name',
+  rotation_period: 'Rotation Period',
+  orbital_period: 'Orbital Period',
+  diameter: 'Diameter',
+  climate: 'Climate',
+  gravity: 'Gravity',
+  terrain: 'Terrain',
+  surface_water: 'Surface Water',
+  population: 'Population',
+  films: 'Films',
+  created: 'Created',
+  edited: 'Edited',
+  url: 'URL',
+};
