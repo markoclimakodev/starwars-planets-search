@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
-import { Planet, TableHeaders } from '../../types';
 
+import { Planet, TableHeaders } from '../../types';
 import styles from './planet_table.module.css';
 
 type PlanetRowProps = {

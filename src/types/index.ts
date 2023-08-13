@@ -39,3 +39,9 @@ export type Filter = {
   value: string;
   id: string;
 };
+
+export type InputChangeEvent = React.ChangeEvent<HTMLInputElement>;
+
+export type NumericFilterEvent = React.ChangeEvent<HTMLInputElement | HTMLSelectElement>;
+
+export type EraseFilterEvent = React.MouseEvent<HTMLButtonElement, MouseEvent>;

@@ -1,8 +1,12 @@
 import { createContext } from 'react';
-import { Planet } from '../types';
+import { Filter, Planet } from '../types';
 
-export type PlanetsContextType = {
+export type PlanetContextType = {
   planets: Planet[],
+  filteredPlanets: Planet[],
+  activeFilters: Filter[],
+  handleFilterPlanets: (planets:Planet[]) => void
+  handleActiveFilters: (filters:Filter[]) => void
 };
 
-export const PlanetsContext = createContext({} as PlanetsContextType);
+export const PlanetsContext = createContext({} as PlanetContextType);
