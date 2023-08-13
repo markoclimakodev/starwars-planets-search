@@ -1,4 +1,4 @@
-import { Filter } from '../../types';
+import { Filter, SortType } from '../../types';
 
 export const columnFilterOptions = [
   'population',
@@ -13,4 +13,9 @@ export const filtersInitalValues:Filter = {
   comparison: 'maior que',
   value: '0',
   id: '',
+};
+
+export const sortinitalValue:SortType = {
+  column_sort: 'population',
+  order: 'ASC',
 };

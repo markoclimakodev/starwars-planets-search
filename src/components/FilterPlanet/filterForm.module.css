@@ -34,12 +34,18 @@
   right: 0.8rem;
 }
 
+.main_filter_container {
+  border: none;
+  display: flex;
+  width: 100%;
+}
+
 .numeric_filter_container {
   align-items: center;
   border: none;
   color: var(--soft-text-color);
   display: flex;
-  gap: 4rem;
+  gap: 2rem;
   padding: 0.1rem 2.5rem;
   width: 100%;
 }
@@ -81,7 +87,7 @@
   font-size: 0.87rem;
   height: 2.62rem;
   padding-left: 0.8rem;
-  width: 5.68rem;
+  width: 3.68rem;
 }
 
 .filter_value:focus-within {
@@ -124,6 +130,16 @@
   white-space: nowrap;
   padding: 0.4rem;
 }
+
+.sort_values {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  border: none;
+  accent-color:var(--radiant);
+}
+
 
 .clear_filter_button {
   background-color: transparent;

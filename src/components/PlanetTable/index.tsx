@@ -19,7 +19,11 @@ export default function PlanetTable() {
       </thead>
       <tbody className={ styles.tbody }>
         { planetsToDisplay && planetsToDisplay.map((planet:Planet) => (
-          <TableRow data={ planet } rowType="td" key={ planet.name } />
+          <TableRow
+            data={ planet }
+            rowType="td"
+            key={ planet.name }
+          />
         ))}
       </tbody>
     </table>

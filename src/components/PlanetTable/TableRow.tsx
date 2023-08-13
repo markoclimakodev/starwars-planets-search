@@ -20,8 +20,15 @@ export function TableRow({ data, rowType }: PlanetRowProps) {
   }, []);
 
   return (
-    <tr className={ styles.tr }>
-      <Cell>{data.name}</Cell>
+    <tr
+      className={ styles.tr }
+    >
+      <Cell
+        data-testid={ rowType === 'th' ? ' ' : 'planet-name' }
+      >
+        {data.name}
+
+      </Cell>
       <Cell>{data.rotation_period}</Cell>
       <Cell>{data.orbital_period}</Cell>
       <Cell>{data.diameter}</Cell>

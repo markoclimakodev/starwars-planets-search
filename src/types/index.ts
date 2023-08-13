@@ -40,6 +40,11 @@ export type Filter = {
   id: string;
 };
 
+export type SortType = {
+  column_sort: keyof Planet;
+  order: 'ASC' | 'DESC'
+};
+
 export type InputChangeEvent = React.ChangeEvent<HTMLInputElement>;
 
 export type NumericFilterEvent = React.ChangeEvent<HTMLInputElement | HTMLSelectElement>;
