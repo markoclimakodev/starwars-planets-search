@@ -1,0 +1,42 @@
+:root {
+  --tableHead-bg: #2e3035;
+  --soft-text-color: #aeaeae;
+  --strong-text-color: #f2f6f7;
+  --radiant: #FAE60A;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: 'Epilogue', sans-serif;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  background-image: url('./assets/backgroun.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+::-webkit-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #aeaeae #2e3035;
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: #2e3035;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #aeaeae;
+  border-radius: 20px;
+  border: 3px solid #aeaeae;
+}
