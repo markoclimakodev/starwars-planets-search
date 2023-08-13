@@ -47,14 +47,19 @@ export default function ActiveFilters() {
           </li>
         ))}
       </ul>
-      <button
-        type="button"
-        id="remove_all_filters"
-        data-testid="button-remove-filters"
-        onClick={ handleRemoveAllFilters }
-      >
-        Remover todos os filtros
-      </button>
+      {
+        activeFilters.length > 1 && (
+          <button
+            type="button"
+            id="remove_all_filters"
+            data-testid="button-remove-filters"
+            onClick={ handleRemoveAllFilters }
+            className={ styles.remove_clear_all_button }
+          >
+            Remover todos os filtros
+          </button>
+        )
+      }
     </>
   );
 }
